@@ -49,7 +49,7 @@ def get_gpus(num_gpus=1, dedicated=True, verbose=True):
     if verbose:
         print(''.join(ret))
     gpus = {}  # gpu id: number of processes
-    for line in ret[2:]:
+    for line in ret:
         s = re.split(r'\s+', line)[1:-1]
         gpu_id = int(s[0])
         pid = s[1]
